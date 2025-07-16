@@ -1,0 +1,17 @@
+{
+  "name": "landbridge-logistics",
+  "version": "1.0.0",
+  "description": "LandBridge運送会社 - 迅速・確実・エコロジーな配送サービス",
+  "scripts": {
+    "serve": "python -m http.server 8000",
+    "build": "echo 'This is a static site, no build required'"
+  },
+  "keywords": [
+    "logistics",
+    "delivery",
+    "shipping",
+    "landbridge"
+  ],
+  "author": "LandBridge",
+  "license": "MIT"
+}
