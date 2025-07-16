@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandBridge運送会社 - 迅速・確実な配送サービス</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-blue-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-truck text-3xl mr-3"></i>
+                    <h1 class="text-2xl font-bold">LandBridge</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#services" class="hover:text-blue-300 transition">サービス</a>
+                    <a href="#pricing" class="hover:text-blue-300 transition">料金</a>
+                    <a href="#tracking" class="hover:text-blue-300 transition">追跡</a>
+                    <a href="#news" class="hover:text-blue-300 transition">お知らせ</a>
+                    <a href="#company" class="hover:text-blue-300 transition">会社情報</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:block text-sm">
+                        <div>TEL: 03-1234-5678</div>
+                        <div>info@landbridge.com</div>
+                    </div>
+                    <button id="loginBtn" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition">
+                        ログイン
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-6">迅速・確実な配送をお届けします</h2>
+            <p class="text-xl mb-8">全国どこでも、お客様の大切な荷物を安全にお届けします</p>
+            <div class="space-x-4">
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition">
+                    今すぐお問い合わせ
+                </button>
+                <button class="border border-white hover:bg-white hover:text-blue-800 text-white px-8 py-3 rounded-lg text-lg font-semibold transition">
+                    料金確認
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">サービス紹介</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-clock text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">急便サービス</h3>
+                    <p class="text-gray-600">お急ぎの配送に対応。最短当日配送可能</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-calendar-alt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">定期便</h3>
+                    <p class="text-gray-600">定期的な配送ニーズに最適なサービス</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-building text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">法人向け配送</h3>
+                    <p class="text-gray-600">企業様向けの大口配送サービス</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">料金プラン</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">料金シミュレーター</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">発送元</label>
+                                    <select class="w-full p-2 border rounded">
+                                        <option>東京都</option>
+                                        <option>大阪府</option>
+                                        <option>愛知県</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">お届け先</label>
+                                    <select class="w-full p-2 border rounded">
+                                        <option>東京都</option>
+                                        <option>大阪府</option>
+                                        <option>愛知県</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">サイズ</label>
+                                    <select class="w-full p-2 border rounded">
+                                        <option>60サイズ</option>
+                                        <option>80サイズ</option>
+                                        <option>100サイズ</option>
+                                    </select>
+                                </div>
+                                <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+                                    料金を計算
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">基本料金表</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between border-b pb-2">
+                                    <span>60サイズ（関東圏内）</span>
+                                    <span class="font-semibold">¥800</span>
+                                </div>
+                                <div class="flex justify-between border-b pb-2">
+                                    <span>80サイズ（関東圏内）</span>
+                                    <span class="font-semibold">¥1,200</span>
+                                </div>
+                                <div class="flex justify-between border-b pb-2">
+                                    <span>100サイズ（関東圏内）</span>
+                                    <span class="font-semibold">¥1,600</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 p-4 bg-orange-100 rounded">
+                                <h4 class="font-semibold text-orange-800">初回利用特典</h4>
+                                <p class="text-orange-700">初回ご利用で配送料20%OFF！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section id="tracking" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">追跡サービス</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-center">荷物追跡</h3>
+                    <div class="flex space-x-2 mb-6">
+                        <input type="text" placeholder="追跡番号を入力してください" 
+                               class="flex-1 p-3 border rounded-lg">
+                        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                            追跡
+                        </button>
+                    </div>
+                    <div class="text-center text-gray-600">
+                        <p>※ログインが必要です</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">お客様の声</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"いつも迅速で丁寧な配送をしていただいています。追跡機能も使いやすく安心です。"</p>
+                    <p class="font-semibold">- 田中様（個人）</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"法人契約でお世話になっています。コストパフォーマンスが良く、信頼できるパートナーです。"</p>
+                    <p class="font-semibold">- ABC商事株式会社</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"急便サービスを利用しましたが、約束通りの時間に配送していただけました。"</p>
+                    <p class="font-semibold">- 佐藤様（個人）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">安心・安全の取り組み</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-shield-alt text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">荷物保険</h3>
+                    <p class="text-gray-600">万が一の際も安心。すべての荷物に保険を適用し、お客様の大切な品物をお守りします。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-users text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">訓練されたスタッフ</h3>
+                    <p class="text-gray-600">定期的な研修を受けた経験豊富なスタッフが、お客様の荷物を責任を持って配送いたします。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-truck text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">車両管理</h3>
+                    <p class="text-gray-600">GPS追跡システム搭載の車両で、リアルタイムでの配送状況確認が可能です。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-leaf text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">環境への配慮</h3>
+                    <p class="text-gray-600">エコドライブの推進と効率的な配送ルートで、環境に優しい配送を心がけています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section id="company" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">会社情報</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">企業理念</h3>
+                        <p class="text-gray-600 mb-6">
+                            「つなぐ、つながる、信頼の架け橋」をモットーに、お客様と地域社会をつなぐ架け橋として、
+                            安全で確実な物流サービスを提供し続けます。
+                        </p>
+                        <h3 class="text-xl font-semibold mb-4">沿革</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p>1995年 - LandBridge運送設立</p>
+                            <p>2005年 - 関西支社開設</p>
+                            <p>2015年 - オンライン追跡システム導入</p>
+                            <p>2020年 - ISO 9001認証取得</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">認証・受賞歴</h3>
+                        <div class="space-y-2 text-gray-600 mb-6">
+                            <p>• ISO 9001品質マネジメントシステム認証</p>
+                            <p>• 安全運輸大臣表彰受賞</p>
+                            <p>• 環境配慮優良企業認定</p>
+                            <p>• グリーン経営認証取得</p>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">サステナビリティ</h3>
+                        <p class="text-gray-600">
+                            環境負荷の軽減と持続可能な社会の実現に向けて、
+                            燃費効率の向上と再配達削減に取り組んでいます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">よくある質問</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-md">
+                    <div class="p-4 cursor-pointer border-b" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold">配送可能なエリアはどこまでですか？</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-600">全国47都道府県に配送可能です。一部離島については別途ご相談ください。</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <div class="p-4 cursor-pointer border-b" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold">追跡機能を利用するにはどうすればいいですか？</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-600">ログイン後、追跡番号を入力することで荷物の配送状況をリアルタイムで確認できます。</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <div class="p-4 cursor-pointer border-b" onclick="toggleFAQ(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold">配送日時の指定は可能ですか？</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-600">はい、可能です。午前・午後・夜間の時間帯指定や、お届け日の指定ができます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-truck text-2xl mr-2"></i>
+                        <h3 class="text-xl font-bold">LandBridge</h3>
+                    </div>
+                    <p class="text-gray-400">迅速・確実な配送サービスで、お客様の信頼にお応えします。</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">サービス</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">急便サービス</a></li>
+                        <li><a href="#" class="hover:text-white">定期便</a></li>
+                        <li><a href="#" class="hover:text-white">法人向け配送</a></li>
+                        <li><a href="#" class="hover:text-white">追跡サービス</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">会社情報</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">企業概要</a></li>
+                        <li><a href="#" class="hover:text-white">採用情報</a></li>
+                        <li><a href="#" class="hover:text-white">ニュース</a></li>
+                        <li><a href="#" class="hover:text-white">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">お問い合わせ</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>03-1234-5678</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@landbridge.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>東京都新宿区○○1-2-3</p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 LandBridge運送会社. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-white">利用規約</a>
+                    <a href="#" class="hover:text-white">プライバシーポリシー</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">ログイン</h2>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <form id="loginForm">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2">メールアドレス</label>
+                        <input type="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2">パスワード</label>
+                        <input type="password" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                        ログイン
+                    </button>
+                </form>
+                <div class="mt-4 text-center">
+                    <a href="#" class="text-blue-600 hover:underline">パスワードを忘れた方</a>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="text-gray-600">アカウントをお持ちでない方</span>
+                    <a href="#" class="text-blue-600 hover:underline ml-1">新規登録</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

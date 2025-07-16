@@ -1,0 +1,249 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.bg-gradient-to-r {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .md\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .text-5xl {
+        font-size: 2rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .py-16 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    border: none;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #1e40af;
+}
+
+.pricing-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1);
+}
+
+.star-rating {
+    color: #fbbf24;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #2563eb;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.safety-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-overlay {
+    backdrop-filter: blur(4px);
+}
+
+.notification {
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.faq-header {
+    background: #f9fafb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-header:hover {
+    background: #f3f4f6;
+}
+
+.footer-link {
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #60a5fa;
+}
+
+.hero-bg {
+    background-image: 
+        linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(30, 64, 175, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="truck-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M20,50 L80,50 M40,30 L40,70" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></pattern></defs><rect width="100%" height="100%" fill="url(%23truck-pattern)"/></svg>');
+}
+
+.loading-spinner {
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #2563eb;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .transition,
+    .fade-in,
+    .notification,
+    html {
+        animation: none;
+        transition: none;
+        scroll-behavior: auto;
+    }
+}
