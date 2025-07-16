@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { fadeInRight, fadeInLeft } from '@/lib/animations'
+import { fadeInLeft } from '@/lib/animations'
 
 const IntroductionSection = () => {
   const [ref, inView] = useInView({
@@ -11,16 +11,13 @@ const IntroductionSection = () => {
   })
 
   return (
-    <section id="about" className="min-h-screen relative bg-gradient-to-t from-black/50 to-transparent">
+    <section id="about" className="min-h-screen relative bg-gradient-to-r from-black/80 via-black/40 to-transparent">
       <div className="container mx-auto flex items-center h-screen">
-        {/* 左側：人物画像のスペース（固定背景が表示される） */}
-        <div className="w-1/2 h-full" />
-        
-        {/* 右側：自己紹介文 */}
+        {/* 左側：自己紹介文 */}
         <motion.div
           ref={ref}
-          className="w-1/2 text-white px-8 md:px-16"
-          variants={fadeInRight}
+          className="w-full md:w-1/2 text-white px-8 md:px-16 py-16 md:py-0"
+          variants={fadeInLeft}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
@@ -97,6 +94,9 @@ const IntroductionSection = () => {
             </motion.svg>
           </motion.div>
         </motion.div>
+        
+        {/* 右側：人物画像のスペース（固定背景が表示される） */}
+        <div className="hidden md:block w-1/2 h-full" />
       </div>
     </section>
   )

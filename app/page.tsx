@@ -23,16 +23,15 @@ export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // 背景を完全に固定（パララックス効果を無効化）
     if (backgroundRef.current) {
-      gsap.to(backgroundRef.current, {
-        yPercent: -50,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
+      gsap.set(backgroundRef.current, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100vh",
+        zIndex: -1
       })
     }
   }, [])

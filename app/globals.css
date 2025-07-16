@@ -50,8 +50,9 @@ body {
   height: 100vh;
   z-index: -1;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   will-change: transform;
 }
 
