@@ -63,10 +63,12 @@
             <h2 class="hero-title">{{LB_HERO_HEADLINE}}<br>環境に優しい配送を実現</h2>
             <p class="hero-subtitle">最新テクノロジーと環境配慮で、持続可能な物流を</p>
             <div class="hero-actions">
-                <button class="btn btn-primary btn-lg">
-                    今すぐ見積もり
+                <button class="btn btn-primary btn-lg" onclick="showPickupModal()">
+                    <i class="fas fa-box-open mr-2"></i>
+                    集荷依頼
                 </button>
-                <button class="btn btn-outline btn-lg" style="color: white; border-color: white;">
+                <button class="btn btn-outline btn-lg" style="color: white; border-color: white;" onclick="location.href='services.html'">
+                    <i class="fas fa-info-circle mr-2"></i>
                     サービス詳細
                 </button>
             </div>
@@ -111,7 +113,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary w-full">
+                            <button class="btn btn-primary w-full" onclick="location.href='pricing.html'">
                                 料金を計算
                             </button>
                         </div>
@@ -234,7 +236,7 @@
                                 <label class="form-label">配送詳細</label>
                                 <textarea class="form-input" rows="3" placeholder="配送内容の詳細をご記入ください"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary w-full">
+                            <button type="submit" class="btn btn-primary w-full" onclick="showNotification('見積もり依頼を受け付けました', 'success')">
                                 見積もりを依頼する
                             </button>
                         </form>
@@ -256,7 +258,7 @@
                 <div class="card tracking-card">
                     <div class="tracking-input-group">
                         <input type="text" class="form-input tracking-input" placeholder="追跡番号を入力（例：LB2024123456）">
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary" onclick="location.href='tracking.html'">
                             <i class="fas fa-search mr-2"></i>
                             追跡する
                         </button>
@@ -390,7 +392,7 @@
             
             <div class="faq-wrapper">
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
                         <h3>配送可能なエリアはどこまでですか？</h3>
                         <i class="fas fa-chevron-down accordion-icon"></i>
                     </div>
@@ -400,7 +402,7 @@
                 </div>
                 
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
                         <h3>追跡機能を利用するにはログインが必要ですか？</h3>
                         <i class="fas fa-chevron-down accordion-icon"></i>
                     </div>
@@ -410,7 +412,7 @@
                 </div>
                 
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
                         <h3>法人契約の特典はありますか？</h3>
                         <i class="fas fa-chevron-down accordion-icon"></i>
                     </div>

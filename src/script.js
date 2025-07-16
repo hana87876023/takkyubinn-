@@ -447,6 +447,32 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUIForLoggedOutUser();
 });
 
+// アコーディオン機能
+function toggleAccordion(header) {
+    const item = header.parentElement;
+    const content = item.querySelector('.accordion-content');
+    const icon = header.querySelector('.accordion-icon');
+    
+    // 現在のアイテムがアクティブかチェック
+    const isActive = item.classList.contains('active');
+    
+    // 全てのアコーディオンを閉じる
+    document.querySelectorAll('.accordion-item').forEach(accordion => {
+        accordion.classList.remove('active');
+        const accordionIcon = accordion.querySelector('.accordion-icon');
+        if (accordionIcon) {
+            accordionIcon.style.transform = 'rotate(0deg)';
+        }
+    });
+    
+    // クリックしたアイテムをトグル
+    if (!isActive) {
+        item.classList.add('active');
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
+
 // グローバル関数として登録
 window.showPickupModal = showPickupModal;
+window.toggleAccordion = toggleAccordion;
 window.handlePickupSubmit = handlePickupSubmit;
