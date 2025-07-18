@@ -23,37 +23,43 @@ const ServicesSection = () => {
       icon: <TruckIcon className="w-12 h-12" />,
       title: "即日配送",
       description: "緊急のお荷物も当日中にお届け。迅速な対応でビジネスをサポートします。",
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
+      bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&opacity=0.2"
     },
     {
       icon: <ClockIcon className="w-12 h-12" />,
       title: "時間指定配送",
       description: "お客様のご都合に合わせた時間指定配送で、確実にお届けします。",
-      color: "from-green-500 to-green-600"
+      color: "from-green-500 to-green-600",
+      bgImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop&opacity=0.2"
     },
     {
       icon: <ShieldCheckIcon className="w-12 h-12" />,
       title: "安全配送",
       description: "最新の追跡システムと保険で、お荷物を安全に保護します。",
-      color: "from-purple-500 to-purple-600"
+      color: "from-purple-500 to-purple-600",
+      bgImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=300&fit=crop&opacity=0.2"
     },
     {
       icon: <GlobeAltIcon className="w-12 h-12" />,
       title: "全国対応",
       description: "北海道から沖縄まで、全国どこでも配送いたします。",
-      color: "from-orange-500 to-orange-600"
+      color: "from-orange-500 to-orange-600",
+      bgImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=300&fit=crop&opacity=0.2"
     },
     {
       icon: <BoltIcon className="w-12 h-12" />,
       title: "エコ配送",
       description: "環境に配慮した配送方法で、持続可能な物流を実現します。",
-      color: "from-teal-500 to-teal-600"
+      color: "from-teal-500 to-teal-600",
+      bgImage: "https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=400&h=300&fit=crop&opacity=0.2"
     },
     {
       icon: <CubeIcon className="w-12 h-12" />,
       title: "特殊配送",
       description: "精密機器や美術品など、特殊なお荷物の配送も承ります。",
-      color: "from-red-500 to-red-600"
+      color: "from-red-500 to-red-600",
+      bgImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=300&fit=crop&opacity=0.2"
     }
   ]
 
@@ -81,8 +87,21 @@ const ServicesSection = () => {
               key={index}
               variants={fadeInUp}
               whileHover={cardHover}
-              className="glass-card p-8 text-center group cursor-pointer"
+              className="glass-card p-8 text-center group cursor-pointer relative overflow-hidden"
             >
+              {/* 背景画像 */}
+              <div 
+                className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage: `url(${service.bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'blur(1px)'
+                }}
+              />
+              
+              {/* コンテンツ */}
+              <div className="relative z-10">
               <motion.div
                 className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
                 whileHover={{ rotate: 360 }}
@@ -110,6 +129,7 @@ const ServicesSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>

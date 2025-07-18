@@ -176,17 +176,25 @@ const StatsSection = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex -space-x-2">
-              {[...Array(5)].map((_, i) => (
+              {[
+                'https://images.unsplash.com/photo-1553069790-6ba85b3ed8f0?w=100&h=100&fit=crop', // 北海道の風景
+                'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=100&h=100&fit=crop', // 東京の景色
+                'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=100&h=100&fit=crop', // 京都の風景
+                'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=100&h=100&fit=crop', // 大阪の景色
+                'https://images.unsplash.com/photo-1625948515291-69613efd103f?w=100&h=100&fit=crop'  // 沖縄の風景
+              ].map((url, i) => (
                 <motion.div
                   key={i}
-                  className="w-10 h-10 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full border-2 border-white flex items-center justify-center"
+                  className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <span className="text-black font-bold text-sm">
-                    {String.fromCharCode(65 + i)}
-                  </span>
+                  <img 
+                    src={url} 
+                    alt={`都道府県${i + 1}`} 
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
               ))}
             </div>
