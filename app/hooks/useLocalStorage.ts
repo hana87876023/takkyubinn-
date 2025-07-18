@@ -50,23 +50,23 @@ export function useLocalStorage<T>(
 
 // カスタムフックで Order データを管理
 export function useOrders() {
-  const [orders, setOrders] = useLocalStorage('orders', [])
+  const [orders, setOrders] = useLocalStorage<any[]>('orders', [])
   
   const addOrder = (order: any) => {
-    setOrders((prevOrders: any[]) => [...prevOrders, order])
+    setOrders((prevOrders) => [...prevOrders, order])
   }
   
   const updateOrder = (orderId: string, updates: any) => {
-    setOrders((prevOrders: any[]) =>
-      prevOrders.map((order: any) =>
+    setOrders((prevOrders) =>
+      prevOrders.map((order) =>
         order.id === orderId ? { ...order, ...updates } : order
       )
     )
   }
   
   const deleteOrder = (orderId: string) => {
-    setOrders((prevOrders: any[]) =>
-      prevOrders.filter((order: any) => order.id !== orderId)
+    setOrders((prevOrders) =>
+      prevOrders.filter((order) => order.id !== orderId)
     )
   }
   
