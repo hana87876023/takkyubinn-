@@ -1,13 +1,16 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useAuth } from '@/contexts/AuthContext'
 import { DashboardStats } from '@/components/dashboard/DashboardStats'
 import { RecentOrders } from '@/components/dashboard/RecentOrders'
+import { NewShipmentModal } from '@/components/shipment/NewShipmentModal'
 import { Plus, TrendingUp, Calendar, Bell } from 'lucide-react'
 
 export default function DashboardPage() {
   const { user } = useAuth()
+  const [isShipmentModalOpen, setIsShipmentModalOpen] = useState(false)
 
   return (
     <div className="space-y-8">
@@ -28,6 +31,7 @@ export default function DashboardPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setIsShipmentModalOpen(true)}
               className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors"
             >
               <Plus className="w-5 h-5" />
@@ -160,7 +164,10 @@ export default function DashboardPage() {
               クイックアクション
             </h3>
             <div className="space-y-3">
-              <button className="w-full p-3 text-left bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all">
+              <button 
+                onClick={() => setIsShipmentModalOpen(true)}
+                className="w-full p-3 text-left bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
+              >
                 <p className="font-medium">新しい配送を依頼</p>
                 <p className="text-sm opacity-90">配送依頼フォームを開く</p>
               </button>
@@ -180,6 +187,12 @@ export default function DashboardPage() {
           </motion.div>
         </div>
       </div>
+
+      {/* 配送依頼モーダル */}
+      <NewShipmentModal 
+        isOpen={isShipmentModalOpen} 
+        onClose={() => setIsShipmentModalOpen(false)} 
+      />
     </div>
   )
 }
