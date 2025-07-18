@@ -21,7 +21,7 @@ const shipmentSchema = z.object({
     width: z.number().min(1, '幅を入力してください').max(170, '170cm以下で入力してください'),
     height: z.number().min(1, '高さを入力してください').max(170, '170cm以下で入力してください')
   }),
-  fragile: z.boolean().default(false),
+  fragile: z.boolean(),
   
   // 送り主情報
   sender: z.object({
@@ -49,8 +49,8 @@ const shipmentSchema = z.object({
   deliverySpeed: z.enum(['normal', 'express', 'timeSpecified']),
   deliveryDate: z.string().optional(),
   deliveryTime: z.string().optional(),
-  insurance: z.boolean().default(false),
-  cashOnDelivery: z.boolean().default(false)
+  insurance: z.boolean(),
+  cashOnDelivery: z.boolean()
 })
 
 type ShipmentFormData = z.infer<typeof shipmentSchema>
