@@ -180,7 +180,7 @@ const StatsSection = () => {
                 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=100&h=100&fit=crop', // 森林の風景
                 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=100&fit=crop', // 山の風景
                 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=100&h=100&fit=crop', // 湖の風景
-                'https://images.unsplash.com/photo-1501436513145-30f24e19fcc4?w=100&h=100&fit=crop', // 丘の風景
+                'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=100&h=100&fit=crop', // 草原の風景
                 'https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?w=100&h=100&fit=crop'  // 花畑の風景
               ].map((url, i) => (
                 <motion.div
