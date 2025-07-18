@@ -1,199 +1,111 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-:root {
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --scroll: 0;
+/* Google Fonts - 日本語対応フォント */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --primary: 20 184 166; /* Teal */
+    --gray: 17 24 39; /* Gray 900 */
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 見出しのスタイル */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    font-feature-settings: "palt" 1;
+  }
+
+  /* スクロールバー */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
 }
 
+@layer components {
+  /* プライマリボタン（シンプル） */
+  .btn-primary {
+    @apply px-8 py-3 bg-primary-600 text-white rounded-full font-medium 
+           hover:bg-primary-700 transition-colors duration-200;
+  }
+
+  /* セカンダリボタン（アウトライン） */
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-medium 
+           hover:border-primary-600 hover:text-primary-600 transition-all duration-200;
+  }
+
+  /* カード（シンプル） */
+  .card-simple {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  /* セクションタイトル */
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gray-900 leading-tight;
+  }
+
+  /* サブタイトル */
+  .section-subtitle {
+    @apply text-xl text-gray-600 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* テキストバランス */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* 日本語の文字詰め */
+  .font-feature-palt {
+    font-feature-settings: "palt" 1;
+  }
+
+  /* シンプルなホバー効果 */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* フォーカス効果（シンプル） */
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2;
+  }
+}
+
+/* グラデーションやアニメーションを削除してシンプルに */
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  /* グラデーションテキストを使わない */
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  overflow-x: hidden;
-}
-
+/* 過度なアニメーションを抑制 */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-}
-
-.fixed-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  will-change: transform;
-}
-
-.main-container {
-  position: relative;
-  z-index: 1;
-}
-
-.section {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  min-height: 100vh;
-  position: relative;
-}
-
-.hero-section {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(15px);
-}
-
-.gradient-text {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.floating-shape {
-  position: absolute;
-  opacity: 0.1;
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-shape:nth-child(even) {
-  animation-delay: 3s;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.typewriter {
-  overflow: hidden;
-  border-right: 0.15em solid orange;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
-}
-
-.signature-animation {
-  animation: drawSignature 3s ease-in-out forwards;
-}
-
-@keyframes drawSignature {
-  0% {
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.progress-bar {
-  background: var(--gradient-accent);
-  height: 4px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: width 0.3s ease;
-}
-
-.custom-cursor {
-  cursor: none;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: #667eea;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-}
-
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #667eea;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.1s ease;
-}
-
-.particle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: url('/truck-icon.svg') no-repeat center;
-  background-size: contain;
-  animation: moveParticle 10s linear infinite;
-}
-
-@keyframes moveParticle {
-  0% {
-    transform: translateX(-100px) translateY(0);
-  }
-  100% {
-    transform: translateX(calc(100vw + 100px)) translateY(-50px);
-  }
-}
-
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
   }
 }
