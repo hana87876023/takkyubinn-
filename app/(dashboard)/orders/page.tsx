@@ -118,7 +118,7 @@ export default function OrdersPage() {
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-600"
+            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary-600"
           >
             <option value="all">すべて</option>
             <option value="pending">受付中</option>
@@ -133,7 +133,7 @@ export default function OrdersPage() {
       {/* 注文リスト */}
       {isLoading ? (
         <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
         </div>
       ) : orders.length === 0 ? (
         <div className="text-center py-12">
@@ -156,7 +156,7 @@ export default function OrdersPage() {
                   <div className="flex items-start justify-between">
                     <div>
                       <h3 className="font-semibold text-lg flex items-center gap-2">
-                        <Package className="w-5 h-5 text-purple-600" />
+                        <Package className="w-5 h-5 text-primary-600" />
                         追跡番号: {order.trackingNumber}
                       </h3>
                       <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -217,7 +217,7 @@ export default function OrdersPage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => alert(`追跡番号: ${order.trackingNumber}\n現在のステータス: ${getStatusText(order.status)}`)}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                     >
                       <Eye className="w-4 h-4" />
                       追跡

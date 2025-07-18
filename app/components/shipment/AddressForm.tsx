@@ -16,7 +16,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <input
           type="text"
           {...register(`${prefix}.name`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
           placeholder="山田 太郎"
         />
         {errors?.name && (
@@ -29,7 +29,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <input
           type="tel"
           {...register(`${prefix}.phone`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
           placeholder="09012345678"
         />
         {errors?.phone && (
@@ -42,7 +42,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <input
           type="text"
           {...register(`${prefix}.postalCode`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
           placeholder="123-4567"
         />
         {errors?.postalCode && (
@@ -54,7 +54,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <label className="block text-sm font-medium mb-2">都道府県 *</label>
         <select
           {...register(`${prefix}.prefecture`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
         >
           <option value="">選択してください</option>
           {prefectures.map((pref) => (
@@ -71,7 +71,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <input
           type="text"
           {...register(`${prefix}.city`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
           placeholder="渋谷区"
         />
         {errors?.city && (
@@ -84,7 +84,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <input
           type="text"
           {...register(`${prefix}.address1`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
           placeholder="道玄坂1-2-3"
         />
         {errors?.address1 && (
@@ -97,7 +97,7 @@ export function AddressForm({ prefix, register, errors }: AddressFormProps) {
         <input
           type="text"
           {...register(`${prefix}.address2`)}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
           placeholder="〇〇ビル 5F"
         />
       </div>
