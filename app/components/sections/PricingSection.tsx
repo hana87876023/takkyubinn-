@@ -93,7 +93,7 @@ const PricingSection = () => {
             >
               {plan.popular && (
                 <motion.div
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold"
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold z-50"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -145,7 +145,7 @@ const PricingSection = () => {
                   href="#contact"
                   className={`w-full bg-gradient-to-r ${plan.color} text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300`}
                 >
-                  {plan.price === 'カスタム' ? 'お問い合わせ' : 'プランを選択'}
+                  プランを選択
                 </AnimatedButton>
               </motion.div>
             </motion.div>
