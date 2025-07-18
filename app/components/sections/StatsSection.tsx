@@ -70,7 +70,7 @@ const StatsSection = () => {
   }, [inView])
 
   return (
-    <section id="stats" className="section py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
+    <section id="stats" className="section py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-black relative overflow-hidden">
       {/* 背景の装飾 */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full opacity-10 -translate-x-1/2 -translate-y-1/2" />
@@ -108,10 +108,10 @@ const StatsSection = () => {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.div variants={fadeInUp} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
             実績と信頼
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-black max-w-2xl mx-auto">
             数字で見る私たちの成果と、お客様からの信頼の証
           </p>
         </motion.div>
@@ -128,7 +128,7 @@ const StatsSection = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <motion.div
-                  className="text-4xl md:text-5xl font-bold mb-2"
+                  className="text-4xl md:text-5xl font-bold mb-2 text-black"
                   animate={{ scale: [1, 1.02, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -141,11 +141,11 @@ const StatsSection = () => {
                   {stat.suffix}
                 </motion.div>
                 
-                <h3 className="text-xl font-semibold mb-2 text-white">
+                <h3 className="text-xl font-semibold mb-2 text-black">
                   {stat.label}
                 </h3>
                 
-                <p className="text-gray-300 text-sm">
+                <p className="text-black text-sm">
                   {stat.description}
                 </p>
                 
@@ -184,17 +184,17 @@ const StatsSection = () => {
                   animate={{ scale: 1 }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <span className="text-white font-bold text-sm">
+                  <span className="text-black font-bold text-sm">
                     {String.fromCharCode(65 + i)}
                   </span>
                 </motion.div>
               ))}
             </div>
             <div className="text-left">
-              <div className="text-white font-semibold">
+              <div className="text-black font-semibold">
                 全国のお客様からの信頼
               </div>
-              <div className="text-gray-300 text-sm">
+              <div className="text-black text-sm">
                 北海道から沖縄まで、多くの企業様にご利用いただいています
               </div>
             </div>
