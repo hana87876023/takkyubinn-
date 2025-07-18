@@ -193,7 +193,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
           >
             <div className="w-full max-w-4xl max-h-[90vh] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden">
               {/* ヘッダー */}
-              <div className="relative bg-gradient-to-r from-primary-600 to-primary-700 p-6 text-white">
+              <div className="relative bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
                 <button
                   onClick={onClose}
                   className="absolute top-6 right-6 p-2 rounded-lg hover:bg-white/20 transition-colors"
@@ -212,7 +212,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                   ].map((item) => (
                     <div key={item.step} className="flex items-center gap-2">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold transition-all ${
-                        step >= item.step ? 'bg-white text-primary-600' : 'bg-white/20 text-white/60'
+                        step >= item.step ? 'bg-white text-purple-600' : 'bg-white/20 text-white/60'
                       }`}>
                         {item.step}
                       </div>
@@ -237,7 +237,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                   >
                     <div>
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <Package className="w-5 h-5 text-primary-600" />
+                        <Package className="w-5 h-5 text-purple-600" />
                         荷物の詳細
                       </h3>
                       
@@ -254,7 +254,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                               key={type.value}
                               className={`relative cursor-pointer rounded-xl border-2 p-4 transition-all ${
                                 watchedData.packageType === type.value
-                                  ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
+                                  ? 'border-purple-600 bg-purple-50 dark:bg-purple-900/20'
                                   : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                               }`}
                             >
@@ -282,7 +282,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                             type="number"
                             step="0.1"
                             {...register('weight', { valueAsNumber: true })}
-                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
                             placeholder="0.5"
                           />
                           {errors.weight && (
@@ -296,19 +296,19 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                             <input
                               type="number"
                               {...register('dimensions.length', { valueAsNumber: true })}
-                              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
+                              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
                               placeholder="縦"
                             />
                             <input
                               type="number"
                               {...register('dimensions.width', { valueAsNumber: true })}
-                              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
+                              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
                               placeholder="横"
                             />
                             <input
                               type="number"
                               {...register('dimensions.height', { valueAsNumber: true })}
-                              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:bg-slate-800"
+                              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 dark:bg-slate-800"
                               placeholder="高さ"
                             />
                           </div>
@@ -324,7 +324,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                           <input
                             type="checkbox"
                             {...register('fragile')}
-                            className="w-4 h-4 text-primary-600 rounded"
+                            className="w-4 h-4 text-purple-600 rounded"
                           />
                           <span className="text-sm">壊れ物</span>
                         </label>
@@ -332,7 +332,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                           <input
                             type="checkbox"
                             {...register('insurance')}
-                            className="w-4 h-4 text-primary-600 rounded"
+                            className="w-4 h-4 text-purple-600 rounded"
                           />
                           <span className="text-sm">保険付き</span>
                         </label>
@@ -343,7 +343,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                       <button
                         type="button"
                         onClick={() => setStep(2)}
-                        className="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                       >
                         次へ: 住所入力
                       </button>
@@ -361,7 +361,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                     {/* 送り主情報 */}
                     <div>
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-primary-600" />
+                        <MapPin className="w-5 h-5 text-purple-600" />
                         送り主情報
                       </h3>
                       <AddressForm prefix="sender" register={register} errors={errors.sender} />
@@ -370,7 +370,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                     {/* 送り先情報 */}
                     <div>
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-accent-600" />
+                        <MapPin className="w-5 h-5 text-pink-600" />
                         送り先情報
                       </h3>
                       <AddressForm prefix="recipient" register={register} errors={errors.recipient} />
@@ -387,7 +387,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                       <button
                         type="button"
                         onClick={() => setStep(3)}
-                        className="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                       >
                         次へ: 確認
                       </button>
@@ -403,15 +403,15 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                     className="space-y-6"
                   >
                     {/* 料金計算結果 */}
-                    <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-xl p-6">
+                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6">
                       <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <Calculator className="w-5 h-5 text-primary-600" />
+                        <Calculator className="w-5 h-5 text-purple-600" />
                         料金計算
                       </h3>
                       
                       {isCalculating ? (
                         <div className="flex items-center justify-center py-8">
-                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
                         </div>
                       ) : estimatedFee ? (
                         <div className="space-y-3">
@@ -428,7 +428,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                           <div className="border-t pt-3">
                             <div className="flex justify-between items-center">
                               <span className="text-lg font-semibold">合計</span>
-                              <span className="text-2xl font-bold text-primary-600">
+                              <span className="text-2xl font-bold text-purple-600">
                                 ¥{estimatedFee.toLocaleString()}
                               </span>
                             </div>
@@ -454,7 +454,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                             key={option.value}
                             className={`cursor-pointer rounded-lg border-2 p-4 transition-all ${
                               watchedData.deliverySpeed === option.value
-                                ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
+                                ? 'border-purple-600 bg-purple-50 dark:bg-purple-900/20'
                                 : 'border-gray-200 dark:border-gray-700'
                             }`}
                           >
@@ -468,7 +468,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                               <div className="font-medium">{option.label}</div>
                               <div className="text-sm text-gray-500">{option.desc}</div>
                               {option.price > 0 && (
-                                <div className="text-sm font-medium text-primary-600 mt-1">
+                                <div className="text-sm font-medium text-purple-600 mt-1">
                                   +¥{option.price}
                                 </div>
                               )}
@@ -489,7 +489,7 @@ export function NewShipmentModal({ isOpen, onClose }: NewShipmentModalProps) {
                       <button
                         type="submit"
                         disabled={!estimatedFee || isSubmitting}
-                        className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg font-semibold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                        className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                       >
                         {isSubmitting ? '処理中...' : '配送を依頼する'}
                       </button>

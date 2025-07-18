@@ -18,7 +18,7 @@ export default function DashboardPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary-600 to-primary-700 p-8 text-white"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white"
       >
         <div className="relative z-10">
           <h1 className="text-3xl font-bold mb-2">
@@ -70,14 +70,14 @@ export default function DashboardPage() {
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Calendar className="w-5 h-5 text-primary-600" />
+              <Calendar className="w-5 h-5 text-purple-600" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 今日の予定
               </h3>
             </div>
             <div className="space-y-3">
               <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-slate-700 rounded-lg">
-                <div className="w-2 h-2 bg-primary-500 rounded-full" />
+                <div className="w-2 h-2 bg-green-500 rounded-full" />
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">
                     配送完了確認
@@ -88,7 +88,7 @@ export default function DashboardPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-slate-700 rounded-lg">
-                <div className="w-2 h-2 bg-accent-500 rounded-full" />
+                <div className="w-2 h-2 bg-orange-500 rounded-full" />
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">
                     顧客対応
@@ -99,7 +99,7 @@ export default function DashboardPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-slate-700 rounded-lg">
-                <div className="w-2 h-2 bg-secondary-600 rounded-full" />
+                <div className="w-2 h-2 bg-blue-500 rounded-full" />
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">
                     週次レポート作成
@@ -120,7 +120,7 @@ export default function DashboardPage() {
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Bell className="w-5 h-5 text-primary-600" />
+              <Bell className="w-5 h-5 text-purple-600" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 最新の通知
               </h3>
@@ -166,7 +166,7 @@ export default function DashboardPage() {
             <div className="space-y-3">
               <button 
                 onClick={() => setIsShipmentModalOpen(true)}
-                className="w-full p-3 text-left bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all"
+                className="w-full p-3 text-left bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
               >
                 <p className="font-medium">新しい配送を依頼</p>
                 <p className="text-sm opacity-90">配送依頼フォームを開く</p>

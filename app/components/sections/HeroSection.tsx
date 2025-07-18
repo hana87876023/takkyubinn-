@@ -27,20 +27,20 @@ const HeroSection = () => {
         <motion.div variants={fadeInUp} className="mb-8">
           <TypewriterText
             text="迅速・確実・エコロジーな配送サービス"
-            className="text-2xl md:text-4xl font-bold text-secondary-800 mb-4"
+            className="text-2xl md:text-4xl font-bold text-gray-800 mb-4"
           />
         </motion.div>
 
         <motion.h1
           variants={fadeInUp}
-          className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800 mb-6"
+          className="text-5xl md:text-7xl font-bold gradient-text mb-6"
         >
           LandBridge運送
         </motion.h1>
 
         <motion.p
           variants={fadeInUp}
-          className="text-xl md:text-2xl text-secondary-600 mb-8 max-w-3xl mx-auto"
+          className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
         >
           最新技術とエコロジーな取り組みで、お客様の大切な荷物を安全にお届けします。
           運送業界をリードする革新的なサービスをご体験ください。
@@ -54,7 +54,7 @@ const HeroSection = () => {
             href="#contact"
             variant="primary"
             size="large"
-            className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl"
           >
             お見積もり依頼
           </AnimatedButton>
@@ -63,7 +63,7 @@ const HeroSection = () => {
             href="#services"
             variant="secondary"
             size="large"
-            className="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary-600 hover:text-white transition-all duration-300"
+            className="border-2 border-blue-500 text-blue-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
           >
             サービス詳細
           </AnimatedButton>
@@ -74,16 +74,16 @@ const HeroSection = () => {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           <div className="glass-card p-6 text-center">
-            <div className="text-3xl font-bold text-primary-600 mb-2">24時間</div>
-            <div className="text-secondary-600">365日対応</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">24時間</div>
+            <div className="text-gray-600">365日対応</div>
           </div>
           <div className="glass-card p-6 text-center">
-            <div className="text-3xl font-bold text-primary-700 mb-2">99.9%</div>
-            <div className="text-secondary-600">配送成功率</div>
+            <div className="text-3xl font-bold text-green-600 mb-2">99.9%</div>
+            <div className="text-gray-600">配送成功率</div>
           </div>
           <div className="glass-card p-6 text-center">
-            <div className="text-3xl font-bold text-accent-600 mb-2">30分</div>
-            <div className="text-secondary-600">平均配送時間</div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">30分</div>
+            <div className="text-gray-600">平均配送時間</div>
           </div>
         </motion.div>
       </motion.div>

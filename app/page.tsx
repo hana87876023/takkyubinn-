@@ -5,7 +5,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Header from './components/sections/Header'
 import HeroSection from './components/sections/HeroSection'
-import ServicesModern from './components/sections/ServicesModern'
+import ServicesSection from './components/sections/ServicesSection'
 import FeaturesSection from './components/sections/FeaturesSection'
 import StatsSection from './components/sections/StatsSection'
 import PricingSection from './components/sections/PricingSection'
@@ -53,7 +53,7 @@ export default function Home() {
       <div className="main-container">
         <Header />
         <HeroSection />
-        <ServicesModern />
+        <ServicesSection />
         <FeaturesSection />
         <StatsSection />
         <PricingSection />
