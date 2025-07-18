@@ -177,11 +177,11 @@ const StatsSection = () => {
           >
             <div className="flex -space-x-2">
               {[
-                'https://images.unsplash.com/photo-1553069790-6ba85b3ed8f0?w=100&h=100&fit=crop', // 北海道の風景
-                'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=100&h=100&fit=crop', // 東京の景色
-                'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=100&h=100&fit=crop', // 京都の風景
-                'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=100&h=100&fit=crop', // 大阪の景色
-                'https://images.unsplash.com/photo-1625948515291-69613efd103f?w=100&h=100&fit=crop'  // 沖縄の風景
+                'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=100&h=100&fit=crop', // 森林の風景
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=100&fit=crop', // 山の風景
+                'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=100&h=100&fit=crop', // 湖の風景
+                'https://images.unsplash.com/photo-1501436513145-30f24e19fcc4?w=100&h=100&fit=crop', // 丘の風景
+                'https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?w=100&h=100&fit=crop'  // 花畑の風景
               ].map((url, i) => (
                 <motion.div
                   key={i}
@@ -192,7 +192,7 @@ const StatsSection = () => {
                 >
                   <img 
                     src={url} 
-                    alt={`都道府県${i + 1}`} 
+                    alt={`自然風景${i + 1}`} 
                     className="w-full h-full object-cover"
                   />
                 </motion.div>

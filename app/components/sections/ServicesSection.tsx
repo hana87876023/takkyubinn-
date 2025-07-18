@@ -24,42 +24,42 @@ const ServicesSection = () => {
       title: "即日配送",
       description: "緊急のお荷物も当日中にお届け。迅速な対応でビジネスをサポートします。",
       color: "from-blue-500 to-blue-600",
-      bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&opacity=0.2"
+      bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop"
     },
     {
       icon: <ClockIcon className="w-12 h-12" />,
       title: "時間指定配送",
       description: "お客様のご都合に合わせた時間指定配送で、確実にお届けします。",
       color: "from-green-500 to-green-600",
-      bgImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop&opacity=0.2"
+      bgImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop"
     },
     {
       icon: <ShieldCheckIcon className="w-12 h-12" />,
       title: "安全配送",
       description: "最新の追跡システムと保険で、お荷物を安全に保護します。",
       color: "from-purple-500 to-purple-600",
-      bgImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=300&fit=crop&opacity=0.2"
+      bgImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
     },
     {
       icon: <GlobeAltIcon className="w-12 h-12" />,
       title: "全国対応",
       description: "北海道から沖縄まで、全国どこでも配送いたします。",
       color: "from-orange-500 to-orange-600",
-      bgImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=300&fit=crop&opacity=0.2"
+      bgImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop"
     },
     {
       icon: <BoltIcon className="w-12 h-12" />,
       title: "エコ配送",
       description: "環境に配慮した配送方法で、持続可能な物流を実現します。",
       color: "from-teal-500 to-teal-600",
-      bgImage: "https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=400&h=300&fit=crop&opacity=0.2"
+      bgImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=300&fit=crop"
     },
     {
       icon: <CubeIcon className="w-12 h-12" />,
       title: "特殊配送",
       description: "精密機器や美術品など、特殊なお荷物の配送も承ります。",
       color: "from-red-500 to-red-600",
-      bgImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=300&fit=crop&opacity=0.2"
+      bgImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=300&fit=crop"
     }
   ]
 
