@@ -3,10 +3,14 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { User, LogOut } from 'lucide-react'
+import Link from 'next/link'
+import { useAuth } from '@/contexts/AuthContext'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { user, logout } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,29 +55,80 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item, index) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                className={`relative font-medium transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/90 hover:text-white'
-                }`}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-              >
-                {item.label}
-                <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500 origin-left"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex items-center space-x-8">
+              {menuItems.map((item, index) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  className={`relative font-medium transition-colors duration-300 ${
+                    isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/90 hover:text-white'
+                  }`}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -2 }}
+                >
+                  {item.label}
+                  <motion.div
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500 origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.a>
+              ))}
+            </nav>
+
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-4">
+              {user ? (
+                <div className="flex items-center space-x-3">
+                  <Link
+                    href="/dashboard"
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
+                      isScrolled 
+                        ? 'text-gray-600 hover:text-blue-600 hover:bg-blue-50' 
+                        : 'text-white/90 hover:text-white hover:bg-white/20'
+                    }`}
+                  >
+                    <User className="w-4 h-4" />
+                    <span>ダッシュボード</span>
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
+                      isScrolled 
+                        ? 'text-gray-600 hover:text-red-600 hover:bg-red-50' 
+                        : 'text-white/90 hover:text-white hover:bg-white/20'
+                    }`}
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span>ログアウト</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center space-x-3">
+                  <Link
+                    href="/login"
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
+                      isScrolled 
+                        ? 'text-gray-600 hover:text-blue-600 hover:bg-blue-50' 
+                        : 'text-white/90 hover:text-white hover:bg-white/20'
+                    }`}
+                  >
+                    ログイン
+                  </Link>
+                  <Link
+                    href="/register"
+                    className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                  >
+                    新規登録
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <motion.button
