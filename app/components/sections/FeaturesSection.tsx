@@ -166,20 +166,13 @@ const FeaturesSection = () => {
                 <div className="bg-black p-6">
                   {/* Status Bar */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg bg-gradient-to-r ${feature.color} bg-opacity-20`}>
-                        <div className="text-white">
-                          {feature.icon}
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-white font-mono">
-                          {feature.title}
-                        </h3>
-                        <p className="text-xs text-gray-500 font-mono">
-                          {feature.description}
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white font-mono">
+                        {feature.title}
+                      </h3>
+                      <p className="text-xs text-gray-500 font-mono">
+                        {feature.description}
+                      </p>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
