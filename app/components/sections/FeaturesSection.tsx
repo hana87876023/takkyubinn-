@@ -136,7 +136,11 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => {
+                if (el) {
+                  cardsRef.current[index] = el;
+                }
+              }}
               data-index={index}
               className={`
                 relative group cursor-pointer
