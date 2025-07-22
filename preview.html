@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandBridge Logistics - モダンUIプレビュー</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .text-primary-600 { color: #0d9488; }
+        .bg-primary-600 { background-color: #0d9488; }
+        .hover\:bg-primary-700:hover { background-color: #0f766e; }
+        .bg-primary-100 { background-color: #ccfbf1; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- ヘッダー -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">LandBridge</h1>
+            <nav class="hidden md:flex gap-8">
+                <a href="#services" class="text-gray-600 hover:text-primary-600">サービス</a>
+                <a href="#features" class="text-gray-600 hover:text-primary-600">特徴</a>
+                <a href="#about" class="text-gray-600 hover:text-primary-600">会社概要</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary-600">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="pt-24 pb-12 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-5xl font-bold text-gray-900 mb-6">次世代の物流ソリューション</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                LandBridgeは、最新のテクノロジーと人間味あふれるサービスで、
+                お客様のビジネスをサポートします。
+            </p>
+            <button class="px-8 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-colors">
+                サービスを見る
+            </button>
+        </div>
+    </section>
+
+    <!-- 特徴セクション -->
+    <section id="features" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">私たちの特徴</h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    LandBridgeは、最新技術と人間味あふれるサービスを組み合わせ、
+                    お客様に最高の配送体験をお届けします。
+                </p>
+            </div>
+
+            <!-- 特徴1 -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-32">
+                <div class="relative">
+                    <div class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=600&fit=crop" 
+                             alt="配送管理システム" class="w-full h-full object-cover">
+                        <div class="absolute bottom-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">30%</div>
+                            <div class="text-sm text-gray-600">時間短縮</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">
+                        AI配送ルート最適化
+                    </span>
+                    <h3 class="text-3xl font-bold text-gray-900 mt-2 mb-6">最新テクノロジーで効率化</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        独自開発のAIアルゴリズムが、リアルタイムの交通状況を分析し、
+                        最短・最速の配送ルートを自動算出。お客様の時間とコストを大幅に削減します。
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-gray-700">配送時間を平均30%短縮</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-gray-700">燃料コストを25%削減</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span class="text-gray-700">配送精度99.8%を実現</span>
+                        </li>
+                    </ul>
+                    <button class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors">
+                        詳しく見る
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- サービスセクション -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">私たちのサービス</h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    お客様のあらゆる配送ニーズに対応する、
+                    包括的なサービスラインナップをご用意しています。
+                </p>
+            </div>
+
+            <!-- サービスカード -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="grid lg:grid-cols-2">
+                    <div class="relative h-[400px] lg:h-[500px] bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&h=600&fit=crop" 
+                             alt="スピード配送" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-12 lg:p-16 flex flex-col justify-center">
+                        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                            スピード配送
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 leading-tight">
+                            お急ぎの荷物も、確実にお届け
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            緊急の書類から大型貨物まで、お客様のニーズに合わせた最速の配送プランをご提案。
+                            当日配送から時間指定配送まで、柔軟に対応いたします。
+                        </p>
+                        <div class="grid grid-cols-3 gap-6 mb-10">
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-gray-600 mb-1">即日配送</div>
+                                <div class="font-semibold text-gray-900">最短2時間</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-gray-600 mb-1">時間指定</div>
+                                <div class="font-semibold text-gray-900">1時間単位</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-gray-600 mb-1">配送エリア</div>
+                                <div class="font-semibold text-gray-900">全国対応</div>
+                            </div>
+                        </div>
+                        <button class="self-start px-8 py-3 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition-colors">
+                            配送プランを見る
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

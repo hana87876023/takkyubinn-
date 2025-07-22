@@ -3,12 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { 
-  PhoneIcon, 
-  EnvelopeIcon, 
-  MapPinIcon, 
-  ClockIcon 
-} from '@heroicons/react/24/outline'
+// Icons removed as requested
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 import AnimatedButton from '../ui/AnimatedButton'
 
@@ -39,32 +34,24 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: <PhoneIcon className="w-6 h-6" />,
       title: '電話番号',
       content: '03-1234-5678',
-      description: '平日 9:00-18:00',
-      color: 'from-blue-500 to-blue-600'
+      description: '平日 9:00-18:00'
     },
     {
-      icon: <EnvelopeIcon className="w-6 h-6" />,
       title: 'メールアドレス',
       content: 'info@landbridge.co.jp',
-      description: '24時間受付',
-      color: 'from-green-500 to-green-600'
+      description: '24時間受付'
     },
     {
-      icon: <MapPinIcon className="w-6 h-6" />,
       title: '本社所在地',
       content: '東京都港区○○○○',
-      description: '〒107-0000',
-      color: 'from-purple-500 to-purple-600'
+      description: '〒107-0000'
     },
     {
-      icon: <ClockIcon className="w-6 h-6" />,
       title: '営業時間',
       content: '平日 9:00-18:00',
-      description: '土日祝日休み',
-      color: 'from-orange-500 to-orange-600'
+      description: '土日祝日休み'
     }
   ]
 
@@ -96,16 +83,12 @@ const ContactSection = () => {
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
-                className="flex items-start space-x-4 glass-card p-6 hover:shadow-lg transition-shadow duration-300"
+                className="glass-card p-6 hover:shadow-lg transition-shadow duration-300"
                 whileHover={{ scale: 1.02 }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className={`bg-gradient-to-r ${info.color} text-white p-3 rounded-lg flex-shrink-0`}>
-                  {info.icon}
-                </div>
-                
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">
                     {info.title}
@@ -131,7 +114,6 @@ const ContactSection = () => {
                 緊急配送や問題発生時は、24時間対応の緊急ホットラインをご利用ください。
               </p>
               <div className="flex items-center space-x-2">
-                <PhoneIcon className="w-5 h-5 text-red-500" />
                 <span className="text-red-600 font-semibold">
                   0120-123-456
                 </span>

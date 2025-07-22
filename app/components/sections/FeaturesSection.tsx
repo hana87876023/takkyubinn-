@@ -101,7 +101,7 @@ const FeaturesSection = () => {
           <p className="text-sm uppercase tracking-widest text-purple-500 font-medium mb-2">
             Our Features
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-gradient-to-r from-gray-900 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-900">
             私たちの特徴
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -110,7 +110,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <div
               key={feature.id}
