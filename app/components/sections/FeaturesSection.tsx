@@ -1,82 +1,69 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { 
-  ChartBarIcon, 
-  CogIcon, 
-  UserGroupIcon, 
-  ShieldCheckIcon,
-  ArrowRightIcon,
-  WifiIcon,
-  SignalIcon
-} from '@heroicons/react/24/outline'
 
 const FeaturesSection = () => {
   const features = [
     {
       id: 1,
       title: "リアルタイム追跡",
-      description: "24時間体制での配送状況モニタリング",
-      icon: <ChartBarIcon className="w-6 h-6" />,
-      status: "オンライン",
-      metrics: {
-        accuracy: "99.9%",
-        updateFreq: "5秒",
-        coverage: "全国対応"
+      description: "お荷物の位置を24時間リアルタイムで追跡。スマートフォンやPCから、いつでもどこでも配送状況を確認できます。",
+      image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=220&fit=crop&auto=format",
+      stats: {
+        accuracy: "99.8%",
+        time: "24/7"
       },
-      color: "from-cyan-500 to-blue-500"
+      statLabels: {
+        accuracy: "追跡精度",
+        time: "稼働時間"
+      }
     },
     {
       id: 2,
       title: "自動化システム",
-      description: "AI駆動の配送ルート最適化",
-      icon: <CogIcon className="w-6 h-6" />,
-      status: "稼働中",
-      metrics: {
-        efficiency: "92%",
-        routes: "1,250+",
-        savings: "35%削減"
+      description: "AIを活用した最適な配送ルートの自動計算。効率的な配送で、お客様により早く商品をお届けします。",
+      image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=220&fit=crop&auto=format",
+      stats: {
+        timeSave: "35%",
+        efficiency: "50%"
       },
-      color: "from-emerald-500 to-teal-500"
+      statLabels: {
+        timeSave: "時間短縮",
+        efficiency: "効率向上"
+      }
     },
     {
       id: 3,
       title: "専門スタッフ",
-      description: "プロフェッショナルサポート",
-      icon: <UserGroupIcon className="w-6 h-6" />,
-      status: "対応可能",
-      metrics: {
-        staff: "150+名",
-        response: "< 5分",
-        satisfaction: "98%"
+      description: "経験豊富なプロフェッショナルが、大切なお荷物を丁寧に取り扱い、安全にお届けします。",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop&auto=format",
+      stats: {
+        staff: "500+",
+        experience: "15年"
       },
-      color: "from-violet-500 to-purple-500"
+      statLabels: {
+        staff: "専門家",
+        experience: "平均経験"
+      }
     },
     {
       id: 4,
       title: "安全保障",
-      description: "完全保険適用システム",
-      icon: <ShieldCheckIcon className="w-6 h-6" />,
-      status: "保護中",
-      metrics: {
+      description: "完全な保険適用で安心・安全な配送をお約束。万が一の場合も、迅速かつ適切に対応いたします。",
+      image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=220&fit=crop&auto=format",
+      stats: {
         coverage: "100%",
-        claims: "24時間",
-        security: "最高級"
+        accident: "0.01%"
       },
-      color: "from-orange-500 to-red-500"
+      statLabels: {
+        coverage: "保険適用",
+        accident: "事故率"
+      }
     }
   ]
 
-  const [activeFeature, setActiveFeature] = useState(0)
   const [visibleCards, setVisibleCards] = useState<number[]>([])
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % features.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [features.length])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,11 +71,13 @@ const FeaturesSection = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = Number(entry.target.getAttribute('data-index'))
-            setVisibleCards((prev) => [...prev, index])
+            if (!visibleCards.includes(index)) {
+              setVisibleCards((prev) => [...prev, index])
+            }
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     )
 
     cardsRef.current.forEach((card) => {
@@ -100,39 +89,37 @@ const FeaturesSection = () => {
         if (card) observer.unobserve(card)
       })
     }
-  }, [])
+  }, [visibleCards])
 
   return (
     <section id="features" className="py-20 bg-black relative overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      {/* Background decoration */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(34, 211, 238, 0.1) 0%, transparent 50%)
+          `
+        }}
+      />
       
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent animate-pulse" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-purple-500/20 to-transparent animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <SignalIcon className="w-5 h-5 text-cyan-400 animate-pulse" />
-            <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider">Service Monitor v2.0</span>
-            <WifiIcon className="w-5 h-5 text-cyan-400 animate-pulse" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="font-mono bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              サービス監視システム
-            </span>
+        <div className="text-center mb-16 opacity-0 animate-fadeInUp">
+          <p className="text-sm uppercase tracking-widest text-purple-500 font-medium mb-2">
+            Our Features
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent">
+            私たちの特徴
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-mono">
-            All Systems Operational • リアルタイム稼働状況
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            最新技術と豊富な経験を組み合わせた、信頼性の高い配送サービス
           </p>
         </div>
 
-        {/* Monitor Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.id}
@@ -143,125 +130,82 @@ const FeaturesSection = () => {
               }}
               data-index={index}
               className={`
-                relative group cursor-pointer
+                bg-gray-900/30 rounded-xl overflow-hidden border border-gray-800
+                hover:border-purple-500/30 hover:bg-gray-900/50
+                transition-all duration-300 cursor-pointer group
                 ${visibleCards.includes(index) 
                   ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-10'
+                  : 'opacity-0 translate-y-8'
                 }
-                transition-all duration-500
               `}
               style={{ transitionDelay: `${index * 100}ms` }}
-              onClick={() => setActiveFeature(index)}
             >
-              {/* Monitor Frame */}
-              <div className={`
-                relative bg-gray-900 rounded-lg overflow-hidden
-                border-2 transition-all duration-300
-                ${activeFeature === index 
-                  ? 'border-cyan-500 shadow-lg shadow-cyan-500/50' 
-                  : 'border-gray-800 hover:border-gray-700'
-                }
-              `}>
-                {/* Monitor Screen */}
-                <div className="bg-black p-6">
-                  {/* Status Bar */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <h3 className="text-lg font-bold text-white font-mono">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs text-gray-500 font-mono">
-                        {feature.description}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-xs text-green-500 font-mono">
-                        {feature.status}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Metrics Display */}
-                  <div className="grid grid-cols-3 gap-4">
-                    {Object.entries(feature.metrics).map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-xl font-bold text-cyan-400 font-mono">
-                          {value}
-                        </div>
-                        <div className="text-xs text-gray-600 font-mono capitalize">
-                          {key}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Progress Bar */}
-                  <div className="mt-4">
-                    <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full bg-gradient-to-r ${feature.color} transition-all duration-1000`}
-                        style={{ 
-                          width: activeFeature === index ? '100%' : '0%',
-                          transition: activeFeature === index ? 'width 5s linear' : 'width 0.3s'
-                        }}
-                      />
-                    </div>
+              {/* Image Area */}
+              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                <img 
+                  src={feature.image} 
+                  alt={feature.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300" />
+                
+                {/* Hover Icon Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-16 h-16 bg-purple-600/90 rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
                 </div>
-
-                {/* Monitor Stand */}
-                <div className="h-4 bg-gray-800 border-t border-gray-700" />
-                <div className="h-2 bg-gradient-to-b from-gray-800 to-gray-900" />
               </div>
 
-              {/* Active Indicator */}
-              {activeFeature === index && (
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg opacity-20 blur animate-pulse" />
-              )}
+              {/* Content Area */}
+              <div className="p-8 bg-gray-900/50">
+                <h3 className="text-xl font-semibold mb-3 text-white flex items-center gap-3">
+                  <span className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </span>
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  {feature.description}
+                </p>
+
+                {/* Stats */}
+                <div className="flex gap-6 pt-6 border-t border-gray-800">
+                  {Object.entries(feature.stats).map(([key, value]) => (
+                    <div key={key} className="text-center">
+                      <span className="text-2xl font-bold text-purple-500 block">
+                        {value}
+                      </span>
+                      <span className="text-xs uppercase text-gray-500 tracking-wider mt-1 block">
+                        {feature.statLabels[key as keyof typeof feature.statLabels]}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* Central Control Panel */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-900 rounded-lg border border-gray-800 p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-mono text-white">
-                システムコントロールパネル
-              </h3>
-              <div className="flex items-center gap-4">
-                <span className="text-xs font-mono text-gray-500">
-                  最終更新: {new Date().toLocaleTimeString('ja-JP')}
-                </span>
-                <button className="px-4 py-2 bg-cyan-500 text-black font-mono text-xs rounded hover:bg-cyan-400 transition-colors">
-                  詳細を見る
-                </button>
-              </div>
-            </div>
-            
-            {/* Active Service Details */}
-            <div className="bg-black rounded p-4 font-mono text-sm">
-              <div className="text-cyan-400 mb-2">
-                &gt; 現在監視中: {features[activeFeature].title}
-              </div>
-              <div className="text-gray-400">
-                &gt; ステータス: <span className="text-green-400">{features[activeFeature].status}</span>
-              </div>
-              <div className="text-gray-400">
-                &gt; パフォーマンス: <span className="text-cyan-400">最適</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
       <style jsx>{`
-        .bg-grid-pattern {
-          background-image: 
-            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-          background-size: 50px 50px;
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease forwards;
         }
       `}</style>
     </section>
