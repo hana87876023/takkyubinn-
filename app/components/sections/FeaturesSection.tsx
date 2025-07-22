@@ -132,7 +132,7 @@ const FeaturesSection = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Image Area */}
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+              <div className="relative h-56 overflow-hidden bg-white">
                 <img 
                   src={feature.image} 
                   alt={feature.title}
