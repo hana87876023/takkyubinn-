@@ -1,314 +1,272 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { useState, useEffect, useRef } from 'react'
 import { 
   ChartBarIcon, 
   CogIcon, 
   UserGroupIcon, 
   ShieldCheckIcon,
-  SparklesIcon
+  ArrowRightIcon,
+  WifiIcon,
+  SignalIcon
 } from '@heroicons/react/24/outline'
-import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight } from '@/lib/animations'
 
 const FeaturesSection = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
-
   const features = [
     {
-      icon: <ChartBarIcon className="w-8 h-8" />,
+      id: 1,
       title: "リアルタイム追跡",
-      description: "お荷物の位置を24時間リアルタイムで追跡できます",
-      progress: 95,
-      gradient: "from-cyan-400 via-blue-500 to-indigo-600",
-      shadowColor: "shadow-blue-500/50",
-      delay: 0
+      description: "24時間体制での配送状況モニタリング",
+      icon: <ChartBarIcon className="w-6 h-6" />,
+      status: "オンライン",
+      metrics: {
+        accuracy: "99.9%",
+        updateFreq: "5秒",
+        coverage: "全国対応"
+      },
+      color: "from-cyan-500 to-blue-500"
     },
     {
-      icon: <CogIcon className="w-8 h-8" />,
+      id: 2,
       title: "自動化システム",
-      description: "AIを活用した効率的な配送ルート最適化",
-      progress: 90,
-      gradient: "from-emerald-400 via-green-500 to-teal-600",
-      shadowColor: "shadow-green-500/50",
-      delay: 0.1
+      description: "AI駆動の配送ルート最適化",
+      icon: <CogIcon className="w-6 h-6" />,
+      status: "稼働中",
+      metrics: {
+        efficiency: "92%",
+        routes: "1,250+",
+        savings: "35%削減"
+      },
+      color: "from-emerald-500 to-teal-500"
     },
     {
-      icon: <UserGroupIcon className="w-8 h-8" />,
+      id: 3,
       title: "専門スタッフ",
-      description: "経験豊富なプロフェッショナルによる丁寧な対応",
-      progress: 98,
-      gradient: "from-violet-400 via-purple-500 to-pink-600",
-      shadowColor: "shadow-purple-500/50",
-      delay: 0.2
+      description: "プロフェッショナルサポート",
+      icon: <UserGroupIcon className="w-6 h-6" />,
+      status: "対応可能",
+      metrics: {
+        staff: "150+名",
+        response: "< 5分",
+        satisfaction: "98%"
+      },
+      color: "from-violet-500 to-purple-500"
     },
     {
-      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      id: 4,
       title: "安全保障",
-      description: "完全な保険適用で安心・安全な配送をお約束",
-      progress: 99,
-      gradient: "from-orange-400 via-red-500 to-pink-600",
-      shadowColor: "shadow-orange-500/50",
-      delay: 0.3
+      description: "完全保険適用システム",
+      icon: <ShieldCheckIcon className="w-6 h-6" />,
+      status: "保護中",
+      metrics: {
+        coverage: "100%",
+        claims: "24時間",
+        security: "最高級"
+      },
+      color: "from-orange-500 to-red-500"
     }
   ]
 
-  const [animatedProgress, setAnimatedProgress] = useState(features.map(() => 0))
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [activeFeature, setActiveFeature] = useState(0)
+  const [visibleCards, setVisibleCards] = useState<number[]>([])
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
-    if (inView) {
-      features.forEach((feature, index) => {
-        const timer = setTimeout(() => {
-          let current = 0
-          const interval = setInterval(() => {
-            current += 2
-            if (current >= feature.progress) {
-              current = feature.progress
-              clearInterval(interval)
-            }
-            setAnimatedProgress(prev => {
-              const newProgress = [...prev]
-              newProgress[index] = current
-              return newProgress
-            })
-          }, 30)
-        }, index * 200)
-        
-        return () => clearTimeout(timer)
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % features.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [features.length])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'))
+            setVisibleCards((prev) => [...prev, index])
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card)
+    })
+
+    return () => {
+      cardsRef.current.forEach((card) => {
+        if (card) observer.unobserve(card)
       })
     }
-  }, [inView])
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect()
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        })
-      }
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
   return (
-    <section id="features" className="section py-20 bg-black relative overflow-hidden">
-      {/* Background effects */}
+    <section id="features" className="py-20 bg-black relative overflow-hidden">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      
+      {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute w-96 h-96 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse" />
-        <div className="absolute w-96 h-96 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(74,222,128,0.1),transparent_50%)]" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent animate-pulse" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-purple-500/20 to-transparent animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
-      <motion.div
-        ref={containerRef}
-        className="container mx-auto px-4 relative z-10"
-        variants={staggerContainer}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-      >
-        <motion.div variants={fadeInUp} className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <SparklesIcon className="w-6 h-6 text-purple-400" />
-            <span className="text-sm font-medium text-purple-400 uppercase tracking-wider">Advanced Logistics</span>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <SignalIcon className="w-5 h-5 text-cyan-400 animate-pulse" />
+            <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider">Service Monitor v2.0</span>
+            <WifiIcon className="w-5 h-5 text-cyan-400 animate-pulse" />
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-              私たちの特徴
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="font-mono bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              サービス監視システム
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            最新技術と豊富な経験を組み合わせた、信頼性の高い配送サービス
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-mono">
+            All Systems Operational • リアルタイム稼働状況
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div variants={fadeInLeft} className="space-y-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: feature.delay, duration: 0.6 }}
-                className="relative group"
-              >
-                {/* Glow effect */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl`} />
-                
-                <motion.div
-                  className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 overflow-hidden"
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {/* Hover gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative flex items-start space-x-5">
-                    <motion.div
-                      className="relative"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} blur-lg opacity-60`} />
-                      <div className={`relative bg-gradient-to-r ${feature.gradient} p-4 rounded-xl ${feature.shadowColor} shadow-lg`}>
+        {/* Monitor Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+          {features.map((feature, index) => (
+            <div
+              key={feature.id}
+              ref={(el) => (cardsRef.current[index] = el)}
+              data-index={index}
+              className={`
+                relative group cursor-pointer
+                ${visibleCards.includes(index) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+                }
+                transition-all duration-500
+              `}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              onClick={() => setActiveFeature(index)}
+            >
+              {/* Monitor Frame */}
+              <div className={`
+                relative bg-gray-900 rounded-lg overflow-hidden
+                border-2 transition-all duration-300
+                ${activeFeature === index 
+                  ? 'border-cyan-500 shadow-lg shadow-cyan-500/50' 
+                  : 'border-gray-800 hover:border-gray-700'
+                }
+              `}>
+                {/* Monitor Screen */}
+                <div className="bg-black p-6">
+                  {/* Status Bar */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2 rounded-lg bg-gradient-to-r ${feature.color} bg-opacity-20`}>
                         <div className="text-white">
                           {feature.icon}
                         </div>
                       </div>
-                    </motion.div>
-                  
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-3">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-400 mb-6 leading-relaxed">
-                        {feature.description}
-                      </p>
-                    
-                      <div className="space-y-3">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">完成度</span>
-                          <motion.span 
-                            className="font-semibold text-white"
-                            key={animatedProgress[index]}
-                            initial={{ scale: 1.2 }}
-                            animate={{ scale: 1 }}
-                          >
-                            {animatedProgress[index]}%
-                          </motion.span>
-                        </div>
-                        
-                        <div className="relative">
-                          <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
-                            <motion.div
-                              className="relative h-full rounded-full overflow-hidden"
-                              style={{ width: `${animatedProgress[index]}%` }}
-                              initial={{ width: 0 }}
-                              animate={{ width: `${animatedProgress[index]}%` }}
-                              transition={{ duration: 1.5, ease: "easeOut", delay: feature.delay }}
-                            >
-                              <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient}`} />
-                              <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/20" />
-                            </motion.div>
-                          </div>
-                        </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white font-mono">
+                          {feature.title}
+                        </h3>
+                        <p className="text-xs text-gray-500 font-mono">
+                          {feature.description}
+                        </p>
                       </div>
                     </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-xs text-green-500 font-mono">
+                        {feature.status}
+                      </span>
+                    </div>
                   </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
 
-          <motion.div variants={fadeInRight} className="relative perspective-1000">
-            <div className="relative transform-gpu" style={{ transformStyle: 'preserve-3d' }}>
-              {/* Floating orbs */}
-              <motion.div
-                className="absolute -top-8 -left-8 w-64 h-64"
-                animate={{ 
-                  rotate: 360,
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 4, repeat: Infinity }
-                }}
-              >
-                <div className="w-full h-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 rounded-full blur-3xl" />
-              </motion.div>
-              
-              <motion.div
-                className="absolute -bottom-8 -right-8 w-48 h-48"
-                animate={{ 
-                  rotate: -360,
-                  scale: [1, 0.9, 1]
-                }}
-                transition={{ 
-                  rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 3, repeat: Infinity }
-                }}
-              >
-                <div className="w-full h-full bg-gradient-to-r from-blue-600/30 to-cyan-600/30 rounded-full blur-3xl" />
-              </motion.div>
-              
-              {/* Main card */}
-              <motion.div 
-                className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/20 overflow-hidden"
-                whileHover={{ 
-                  rotateY: 5, 
-                  rotateX: -5,
-                  scale: 1.05 
-                }}
-                transition={{ type: "spring", stiffness: 100 }}
-              >
-                {/* Inner glow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-blue-600/20 opacity-60" />
-                
-                {/* Satisfaction percentage */}
-                <motion.div
-                  className="relative text-8xl font-bold mb-6"
-                  animate={{ 
-                    scale: [1, 1.02, 1],
-                    rotate: [0, 1, -1, 0]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                    99.9%
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 blur-2xl opacity-40" />
-                </motion.div>
-                
-                <h3 className="relative text-3xl font-bold text-white mb-4">
-                  顧客満足度
-                </h3>
-                
-                <p className="relative text-gray-300 mb-8 text-lg">
-                  お客様からの高い評価をいただいております
-                </p>
-                
-                {/* Stars */}
-                <div className="relative flex justify-center space-x-2">
-                  {[...Array(5)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      transition={{ 
-                        delay: i * 0.1, 
-                        type: "spring",
-                        stiffness: 200
-                      }}
-                      whileHover={{ 
-                        scale: 1.2, 
-                        rotate: 15,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      <svg
-                        className="w-8 h-8 text-yellow-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </motion.div>
-                  ))}
+                  {/* Metrics Display */}
+                  <div className="grid grid-cols-3 gap-4">
+                    {Object.entries(feature.metrics).map(([key, value]) => (
+                      <div key={key} className="text-center">
+                        <div className="text-xl font-bold text-cyan-400 font-mono">
+                          {value}
+                        </div>
+                        <div className="text-xs text-gray-600 font-mono capitalize">
+                          {key}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="mt-4">
+                    <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
+                      <div 
+                        className={`h-full bg-gradient-to-r ${feature.color} transition-all duration-1000`}
+                        style={{ 
+                          width: activeFeature === index ? '100%' : '0%',
+                          transition: activeFeature === index ? 'width 5s linear' : 'width 0.3s'
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
+
+                {/* Monitor Stand */}
+                <div className="h-4 bg-gray-800 border-t border-gray-700" />
+                <div className="h-2 bg-gradient-to-b from-gray-800 to-gray-900" />
+              </div>
+
+              {/* Active Indicator */}
+              {activeFeature === index && (
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg opacity-20 blur animate-pulse" />
+              )}
             </div>
-          </motion.div>
+          ))}
         </div>
-      </motion.div>
+
+        {/* Central Control Panel */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gray-900 rounded-lg border border-gray-800 p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-mono text-white">
+                システムコントロールパネル
+              </h3>
+              <div className="flex items-center gap-4">
+                <span className="text-xs font-mono text-gray-500">
+                  最終更新: {new Date().toLocaleTimeString('ja-JP')}
+                </span>
+                <button className="px-4 py-2 bg-cyan-500 text-black font-mono text-xs rounded hover:bg-cyan-400 transition-colors">
+                  詳細を見る
+                </button>
+              </div>
+            </div>
+            
+            {/* Active Service Details */}
+            <div className="bg-black rounded p-4 font-mono text-sm">
+              <div className="text-cyan-400 mb-2">
+                &gt; 現在監視中: {features[activeFeature].title}
+              </div>
+              <div className="text-gray-400">
+                &gt; ステータス: <span className="text-green-400">{features[activeFeature].status}</span>
+              </div>
+              <div className="text-gray-400">
+                &gt; パフォーマンス: <span className="text-cyan-400">最適</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .bg-grid-pattern {
+          background-image: 
+            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+          background-size: 50px 50px;
+        }
+      `}</style>
     </section>
   )
 }
