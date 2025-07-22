@@ -75,48 +75,43 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* 連絡先情報 */}
-          <motion.div variants={fadeInUp} className="space-y-8">
+          <motion.div variants={fadeInUp}>
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
               連絡先情報
             </h3>
             
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                className="glass-card p-6 hover:shadow-lg transition-shadow duration-300"
-                whileHover={{ scale: 1.02 }}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-1">
-                    {info.title}
-                  </h4>
-                  <p className="text-gray-700 font-medium mb-1">
-                    {info.content}
-                  </p>
-                  <p className="text-gray-500 text-sm">
-                    {info.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-
             <motion.div
-              className="glass-card p-6 bg-gradient-to-r from-blue-50 to-purple-50"
-              variants={fadeInUp}
+              className="glass-card p-8 hover:shadow-lg transition-shadow duration-300"
+              whileHover={{ scale: 1.02 }}
             >
-              <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                緊急時対応
-              </h4>
-              <p className="text-gray-600 mb-4">
-                緊急配送や問題発生時は、24時間対応の緊急ホットラインをご利用ください。
-              </p>
-              <div className="flex items-center space-x-2">
-                <span className="text-red-600 font-semibold">
-                  0120-123-456
-                </span>
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4 last:border-0 last:pb-0">
+                    <h4 className="font-semibold text-gray-800 mb-1">
+                      {info.title}
+                    </h4>
+                    <p className="text-gray-700 font-medium mb-1">
+                      {info.content}
+                    </p>
+                    <p className="text-gray-500 text-sm">
+                      {info.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                  緊急時対応
+                </h4>
+                <p className="text-gray-600 mb-4">
+                  緊急配送や問題発生時は、24時間対応の緊急ホットラインをご利用ください。
+                </p>
+                <div className="flex items-center space-x-2">
+                  <span className="text-red-600 font-semibold text-xl">
+                    0120-123-456
+                  </span>
+                </div>
               </div>
             </motion.div>
           </motion.div>
