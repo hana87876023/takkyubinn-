@@ -92,17 +92,8 @@ const FeaturesSection = () => {
   }, [visibleCards])
 
   return (
-    <section id="features" className="py-20 bg-black relative overflow-hidden">
-      {/* Background decoration */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          background: `
-            radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(34, 211, 238, 0.1) 0%, transparent 50%)
-          `
-        }}
-      />
+    <section id="features" className="py-20 bg-white relative overflow-hidden">
+      {/* Background decoration - removed for white background */}
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -110,10 +101,10 @@ const FeaturesSection = () => {
           <p className="text-sm uppercase tracking-widest text-purple-500 font-medium mb-2">
             Our Features
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-gradient-to-r from-white to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-gradient-to-r from-gray-900 to-purple-600 bg-clip-text text-transparent">
             私たちの特徴
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             最新技術と豊富な経験を組み合わせた、信頼性の高い配送サービス
           </p>
         </div>
@@ -130,8 +121,8 @@ const FeaturesSection = () => {
               }}
               data-index={index}
               className={`
-                bg-gray-900/30 rounded-xl overflow-hidden border border-gray-800
-                hover:border-purple-500/30 hover:bg-gray-900/50
+                bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm
+                hover:border-purple-500/30 hover:shadow-lg
                 transition-all duration-300 cursor-pointer group
                 ${visibleCards.includes(index) 
                   ? 'opacity-100 translate-y-0' 
@@ -160,27 +151,22 @@ const FeaturesSection = () => {
               </div>
 
               {/* Content Area */}
-              <div className="p-8 bg-gray-900/50">
-                <h3 className="text-xl font-semibold mb-3 text-white flex items-center gap-3">
-                  <span className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  </span>
+              <div className="p-8 bg-white">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {feature.description}
                 </p>
 
                 {/* Stats */}
-                <div className="flex gap-6 pt-6 border-t border-gray-800">
+                <div className="flex gap-6 pt-6 border-t border-gray-200">
                   {Object.entries(feature.stats).map(([key, value]) => (
                     <div key={key} className="text-center">
                       <span className="text-2xl font-bold text-purple-500 block">
                         {value}
                       </span>
-                      <span className="text-xs uppercase text-gray-500 tracking-wider mt-1 block">
+                      <span className="text-xs uppercase text-gray-600 tracking-wider mt-1 block">
                         {feature.statLabels[key as keyof typeof feature.statLabels]}
                       </span>
                     </div>
