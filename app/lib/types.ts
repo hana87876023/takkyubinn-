@@ -5,6 +5,7 @@ export interface User {
   name: string
   phone: string
   company?: string
+  address?: string
   createdAt: Date
   lastLogin: Date
 }
@@ -49,6 +50,7 @@ export interface AuthContextType {
   login: (email: string, password: string) => Promise<boolean>
   register: (userData: RegisterData) => Promise<boolean>
   logout: () => void
+  updateUser: (userData: Partial<User>) => void
   isLoading: boolean
 }
 

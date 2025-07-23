@@ -84,11 +84,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     storage.removeUser()
   }
 
+  const updateUser = (userData: Partial<User>) => {
+    if (user) {
+      const updatedUser = { ...user, ...userData }
+      setUser(updatedUser)
+      storage.saveUser(updatedUser)
+    }
+  }
+
   const value: AuthContextType = {
     user,
     login,
     register,
     logout,
+    updateUser,
     isLoading
   }
 
