@@ -31,7 +31,7 @@ const FloatingElements = () => {
           }}
         >
           {/* 幾何学図形 */}
-          <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-600 rounded-full" />
+          <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-900 rounded-full" />
         </motion.div>
       ))}
       
@@ -49,7 +49,7 @@ const FloatingElements = () => {
       />
       
       <motion.div
-        className="absolute top-1/2 left-1/2 w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-40"
+        className="absolute top-1/2 left-1/2 w-4 h-4 bg-gradient-to-r from-blue-700 to-pink-500 rounded-full opacity-40"
         animate={{ 
           x: [-20, 20, -20],
           y: [-10, 10, -10],

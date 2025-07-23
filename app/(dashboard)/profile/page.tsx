@@ -42,13 +42,13 @@ export default function ProfilePage() {
         animate={{ opacity: 1, y: 0 }}
         className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden"
       >
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white">
+        <div className="bg-gradient-to-r from-blue-900 to-pink-600 p-8 text-white">
           <div className="flex items-center gap-6">
             <div className="relative">
               <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <User className="w-12 h-12 text-white" />
               </div>
-              <button className="absolute bottom-0 right-0 w-8 h-8 bg-white text-purple-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+              <button className="absolute bottom-0 right-0 w-8 h-8 bg-white text-blue-900 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                 <Camera className="w-4 h-4" />
               </button>
             </div>
@@ -77,7 +77,7 @@ export default function ProfilePage() {
           {!isEditing ? (
             <button
               onClick={() => setIsEditing(true)}
-              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              className="px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-950 transition-colors"
             >
               編集
             </button>
@@ -91,7 +91,7 @@ export default function ProfilePage() {
               </button>
               <button
                 onClick={handleSave}
-                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-950 transition-colors flex items-center gap-2"
               >
                 <Save className="w-4 h-4" />
                 保存
@@ -204,8 +204,8 @@ export default function ProfilePage() {
         className="grid grid-cols-1 md:grid-cols-3 gap-6"
       >
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 text-center">
-          <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
-            <Calendar className="w-6 h-6 text-purple-600" />
+          <div className="w-12 h-12 bg-blue-100 dark:bg-blue-950/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <Calendar className="w-6 h-6 text-blue-900" />
           </div>
           <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">365</p>
           <p className="text-sm text-gray-600 dark:text-gray-400">利用日数</p>

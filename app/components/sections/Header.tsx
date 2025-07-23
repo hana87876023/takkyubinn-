@@ -42,7 +42,7 @@ const Header = () => {
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-900 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-sm">LB</span>
             </div>
             <span className="text-xl font-bold text-gray-800 transition-all duration-300">
@@ -103,7 +103,7 @@ const Header = () => {
                   </Link>
                   <Link
                     href="/register"
-                    className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                    className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-900 text-white rounded-lg font-medium hover:from-blue-600 hover:to-blue-950 transition-all duration-300"
                   >
                     新規登録
                   </Link>

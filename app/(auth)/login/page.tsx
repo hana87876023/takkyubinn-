@@ -44,7 +44,7 @@ export default function LoginPage() {
           アカウントをお持ちでない場合は{' '}
           <Link 
             href="/register" 
-            className="text-purple-400 hover:text-purple-300 font-medium underline"
+            className="text-blue-700 hover:text-blue-600 font-medium underline"
           >
             新規登録
           </Link>
@@ -58,7 +58,7 @@ export default function LoginPage() {
           className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
         >
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600 mx-auto mb-4" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-900 mx-auto mb-4" />
             <p className="text-gray-600 dark:text-gray-400">
               ダッシュボードに移動中...
             </p>

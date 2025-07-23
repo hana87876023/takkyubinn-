@@ -56,7 +56,7 @@ const Footer = () => {
           {/* 会社情報 */}
           <motion.div variants={fadeInUp} className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-900 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">LB</span>
               </div>
               <span className="text-2xl font-bold">LandBridge運送</span>

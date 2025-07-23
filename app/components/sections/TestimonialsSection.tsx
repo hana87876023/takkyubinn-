@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.div variants={fadeInUp} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             お客様の声
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -132,7 +132,7 @@ const TestimonialsSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-900 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">
                   {testimonials[currentIndex].name.charAt(0)}
                 </span>

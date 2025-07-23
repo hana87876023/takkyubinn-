@@ -50,7 +50,7 @@ const FeaturesSection = () => {
       id: 4,
       title: "安全保障",
       description: "完全な保険適用で安心・安全な配送をお約束。万が一の場合も、迅速かつ適切に対応いたします。",
-      image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=220&fit=crop&auto=format",
+      image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=400&h=220&fit=crop&auto=format",
       stats: {
         coverage: "100%",
         accident: "0.01%"
@@ -98,7 +98,7 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 opacity-0 animate-fadeInUp">
-          <p className="text-sm uppercase tracking-widest text-purple-500 font-medium mb-2">
+          <p className="text-sm uppercase tracking-widest text-blue-800 font-medium mb-2">
             Our Features
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-900">
@@ -122,7 +122,7 @@ const FeaturesSection = () => {
               data-index={index}
               className={`
                 bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm
-                hover:border-purple-500/30 hover:shadow-lg
+                hover:border-blue-800/30 hover:shadow-lg
                 transition-all duration-300 cursor-pointer group
                 ${visibleCards.includes(index) 
                   ? 'opacity-100 translate-y-0' 
@@ -153,7 +153,7 @@ const FeaturesSection = () => {
                 <div className="flex gap-6 pt-6 border-t border-gray-200">
                   {Object.entries(feature.stats).map(([key, value]) => (
                     <div key={key} className="text-center">
-                      <span className="text-2xl font-bold text-purple-500 block">
+                      <span className="text-2xl font-bold text-blue-800 block">
                         {value}
                       </span>
                       <span className="text-xs uppercase text-gray-600 tracking-wider mt-1 block">

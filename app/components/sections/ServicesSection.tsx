@@ -37,7 +37,7 @@ const ServicesSection = () => {
       icon: <ShieldCheckIcon className="w-12 h-12" />,
       title: "安全配送",
       description: "最新の追跡システムと保険で、お荷物を安全に保護します。",
-      color: "from-purple-500 to-purple-600",
+      color: "from-blue-800 to-blue-900",
       bgImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
     },
     {
@@ -73,7 +73,7 @@ const ServicesSection = () => {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.div variants={fadeInUp} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             サービス一覧
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">

@@ -86,7 +86,7 @@ export function DashboardStats() {
       change: '-12分',
       changeType: 'increase' as const,
       icon: Clock,
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-blue-800 to-pink-500'
     }
   ]
 

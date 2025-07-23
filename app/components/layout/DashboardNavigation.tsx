@@ -56,7 +56,7 @@ export function DashboardNavigation() {
               </button>
               
               <Link href="/dashboard" className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-900 to-pink-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">LB</span>
                 </div>
                 <span className="text-xl font-bold text-gray-900 dark:text-white">
@@ -74,7 +74,7 @@ export function DashboardNavigation() {
                 <input
                   type="text"
                   placeholder="注文番号で検索..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 />
               </div>
             </div>
@@ -122,7 +122,7 @@ export function DashboardNavigation() {
                   href={item.href}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     isActive
-                      ? 'bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-400'
+                      ? 'bg-blue-50 text-blue-950 dark:bg-blue-950/20 dark:text-blue-700'
                       : 'text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700'
                   }`}
                 >
@@ -152,7 +152,7 @@ export function DashboardNavigation() {
           >
             <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-900 to-pink-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">LB</span>
                 </div>
                 <span className="text-xl font-bold text-gray-900 dark:text-white">
@@ -177,7 +177,7 @@ export function DashboardNavigation() {
                     onClick={() => setIsSidebarOpen(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                       isActive
-                        ? 'bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-400'
+                        ? 'bg-blue-50 text-blue-950 dark:bg-blue-950/20 dark:text-blue-700'
                         : 'text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700'
                     }`}
                   >

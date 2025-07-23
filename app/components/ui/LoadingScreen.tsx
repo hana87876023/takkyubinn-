@@ -18,7 +18,7 @@ const LoadingScreen = () => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-gradient-to-br from-blue-600 to-black flex items-center justify-center z-50"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}

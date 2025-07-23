@@ -31,7 +31,7 @@ const StatsSection = () => {
       suffix: '時間',
       label: '緊急対応',
       description: '365日対応',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-blue-800 to-blue-900'
     },
     {
       number: 99.9,
@@ -74,7 +74,7 @@ const StatsSection = () => {
       {/* 背景の装飾 */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full opacity-10 -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500 rounded-full opacity-10 translate-x-1/2 translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-800 rounded-full opacity-10 translate-x-1/2 translate-y-1/2" />
       </div>
 
       {/* パーティクルエフェクト */}

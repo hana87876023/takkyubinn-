@@ -58,7 +58,7 @@ const IntroductionSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-900 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">田中</span>
             </div>
             

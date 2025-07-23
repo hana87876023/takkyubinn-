@@ -33,7 +33,7 @@ const HeroSection = () => {
 
         <motion.h1
           variants={fadeInUp}
-          className="text-5xl md:text-7xl font-bold gradient-text mb-6"
+          className="text-5xl md:text-7xl font-bold text-black mb-6"
         >
           LandBridge運送
         </motion.h1>
@@ -54,7 +54,7 @@ const HeroSection = () => {
             href="#contact"
             variant="primary"
             size="large"
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl"
+            className="bg-gradient-to-r from-blue-500 to-blue-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl"
           >
             お見積もり依頼
           </AnimatedButton>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             <div className="text-gray-600">配送成功率</div>
           </div>
           <div className="glass-card p-6 text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">30分</div>
+            <div className="text-3xl font-bold text-blue-900 mb-2">30分</div>
             <div className="text-gray-600">平均配送時間</div>
           </div>
         </motion.div>

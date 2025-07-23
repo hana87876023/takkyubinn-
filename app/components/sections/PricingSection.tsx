@@ -42,7 +42,7 @@ const PricingSection = () => {
         '専用担当者',
         '配送レポート'
       ],
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-blue-800 to-blue-900',
       popular: true
     },
     {
@@ -76,7 +76,7 @@ const PricingSection = () => {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.div variants={fadeInUp} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             料金プラン
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ const PricingSection = () => {
             >
               {plan.popular && (
                 <motion.div
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold z-50"
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-800 to-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold z-50"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -102,7 +102,7 @@ const PricingSection = () => {
               )}
               
               <motion.div
-                className={`glass-card p-8 h-full ${plan.popular ? 'ring-2 ring-purple-500' : ''}`}
+                className={`glass-card p-8 h-full ${plan.popular ? 'ring-2 ring-blue-800' : ''}`}
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)'

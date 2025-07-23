@@ -87,7 +87,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
               <input
                 type="email"
                 {...register('email')}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 placeholder="your@email.com"
               />
             </div>
@@ -110,7 +110,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
               <input
                 type={showPassword ? 'text' : 'password'}
                 {...register('password')}
-                className="w-full pl-10 pr-12 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                className="w-full pl-10 pr-12 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 placeholder="パスワードを入力"
               />
               <button
@@ -144,7 +144,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 {...register('confirmPassword')}
-                className="w-full pl-10 pr-12 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                className="w-full pl-10 pr-12 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 placeholder="パスワードを再入力"
               />
               <button
@@ -178,7 +178,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
               <input
                 type="text"
                 {...register('name')}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 placeholder="山田太郎"
               />
             </div>
@@ -201,7 +201,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
               <input
                 type="tel"
                 {...register('phone')}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 placeholder="090-1234-5678"
               />
             </div>
@@ -224,7 +224,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
               <input
                 type="text"
                 {...register('company')}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-transparent dark:bg-slate-700 dark:text-white"
                 placeholder="株式会社サンプル"
               />
             </div>
@@ -241,7 +241,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
             disabled={isLoading}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-blue-900 to-pink-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
@@ -257,7 +257,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
             既にアカウントをお持ちの場合は{' '}
-            <button className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium">
+            <button className="text-blue-900 dark:text-blue-700 hover:text-blue-950 dark:hover:text-blue-600 font-medium">
               ログイン
             </button>
           </p>

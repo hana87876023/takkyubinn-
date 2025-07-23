@@ -18,7 +18,7 @@ export default function DashboardPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-900 to-pink-600 p-8 text-white"
       >
         <div className="relative z-10">
           <h1 className="text-3xl font-bold mb-2">
@@ -70,7 +70,7 @@ export default function DashboardPage() {
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Calendar className="w-5 h-5 text-purple-600" />
+              <Calendar className="w-5 h-5 text-blue-900" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 今日の予定
               </h3>
@@ -120,7 +120,7 @@ export default function DashboardPage() {
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Bell className="w-5 h-5 text-purple-600" />
+              <Bell className="w-5 h-5 text-blue-900" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 最新の通知
               </h3>
@@ -166,7 +166,7 @@ export default function DashboardPage() {
             <div className="space-y-3">
               <button 
                 onClick={() => setIsShipmentModalOpen(true)}
-                className="w-full p-3 text-left bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
+                className="w-full p-3 text-left bg-gradient-to-r from-blue-800 to-pink-500 text-white rounded-lg hover:from-blue-900 hover:to-pink-600 transition-all"
               >
                 <p className="font-medium">新しい配送を依頼</p>
                 <p className="text-sm opacity-90">配送依頼フォームを開く</p>

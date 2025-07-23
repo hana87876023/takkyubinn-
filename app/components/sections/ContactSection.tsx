@@ -65,7 +65,7 @@ const ContactSection = () => {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.div variants={fadeInUp} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             お問い合わせ
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -202,7 +202,7 @@ const ContactSection = () => {
 
               <AnimatedButton
                 onClick={() => {}}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-900 text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300"
               >
                 お問い合わせを送信
               </AnimatedButton>

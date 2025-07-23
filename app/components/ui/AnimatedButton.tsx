@@ -26,7 +26,7 @@ const AnimatedButton = ({
   const baseClasses = 'relative inline-flex items-center justify-center font-semibold transition-all duration-300 overflow-hidden'
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-2xl',
+    primary: 'bg-gradient-to-r from-blue-500 to-blue-900 text-white shadow-lg hover:shadow-2xl',
     secondary: 'bg-white text-gray-800 border-2 border-gray-300 hover:border-blue-500 hover:text-blue-500',
     outline: 'border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white'
   }
